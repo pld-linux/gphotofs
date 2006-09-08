@@ -1,5 +1,5 @@
 Summary:	GPhotoFS - FUSE module that exposes cameras as filesystems
-Summary(pl):	GPhotoFS - modu³ FUSE pokazuj±cy aparaty jako systemu plików
+Summary(pl):	GPhotoFS - modu³ FUSE pokazuj±cy aparaty jako systemy plików
 Name:		gphotofs
 Version:	0.3
 Release:	1
