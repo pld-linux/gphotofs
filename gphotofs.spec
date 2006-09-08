@@ -8,8 +8,8 @@ Group:		Applications
 Source0:	http://dl.sourceforge.net/gphoto/%{name}-%{version}.tar.bz2
 # Source0-md5:	73b7582888b19d2ed976849a6a02782a
 URL:		http://gphoto.sourceforge.net/proj/gphotofs/
-BuildRequires:	libfuse-devel >= 0:2.2
 BuildRequires:	glib2-devel >= 1:2.6
+BuildRequires:	libfuse-devel >= 0:2.2
 BuildRequires:	libgphoto2-devel >= 2.1
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
