@@ -1,5 +1,5 @@
 Summary:	GPhotoFS - FUSE module that exposes cameras as filesystems
-Summary(pl):	GPhotoFS - modu³ FUSE pokazuj±cy aparaty jako systemy plików
+Summary(pl.UTF-8):   GPhotoFS - moduÅ‚ FUSE pokazujÄ…cy aparaty jako systemy plikÃ³w
 Name:		gphotofs
 Version:	0.3
 Release:	1
@@ -26,18 +26,18 @@ As libgphoto2 is a userspace library for interacting with cameras, it
 is natural that if one to build a filesystem ontop of it, one should
 use FUSE, and that is what have been done.
 
-%description -l pl
-GPhotoFS to klient systemu plików oparty na libgphoto2 pokazuj±cy
-obs³ugiwane aparaty jako systemy plików; o ile niektóre aparaty
-implementuj± klasê USB Mass Storage i s± dostêpne jako systemy plików
-(co czyni ten program nadmiarowym), to wiele u¿ywa PTP (Picture
-Transfer Protocol - protoko³u przesy³ania zdjêæ) lub innego w³asnego
-protoko³u. O ile aparat jest obs³ugiwany przez libgphoto2, mo¿e byæ
-podmontowany jako system plików przy u¿yciu tego programu.
+%description -l pl.UTF-8
+GPhotoFS to klient systemu plikÃ³w oparty na libgphoto2 pokazujÄ…cy
+obsÅ‚ugiwane aparaty jako systemy plikÃ³w; o ile niektÃ³re aparaty
+implementujÄ… klasÄ™ USB Mass Storage i sÄ… dostÄ™pne jako systemy plikÃ³w
+(co czyni ten program nadmiarowym), to wiele uÅ¼ywa PTP (Picture
+Transfer Protocol - protokoÅ‚u przesyÅ‚ania zdjÄ™Ä‡) lub innego wÅ‚asnego
+protokoÅ‚u. O ile aparat jest obsÅ‚ugiwany przez libgphoto2, moÅ¼e byÄ‡
+podmontowany jako system plikÃ³w przy uÅ¼yciu tego programu.
 
-Jako ¿e libgphoto2 jest bibliotek± przestrzeni u¿ytkownika do
-komunikacji z aparatami, naturalnym jest, ¿e aby stworzyæ na jej
-podstawie system plików, nale¿y u¿yæ FUSE - i w³a¶nie to zosta³o
+Jako Å¼e libgphoto2 jest bibliotekÄ… przestrzeni uÅ¼ytkownika do
+komunikacji z aparatami, naturalnym jest, Å¼e aby stworzyÄ‡ na jej
+podstawie system plikÃ³w, naleÅ¼y uÅ¼yÄ‡ FUSE - i wÅ‚aÅ›nie to zostaÅ‚o
 zrobione.
 
 %prep
