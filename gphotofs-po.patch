@@ -1,0 +1,120 @@
+--- gphotofs-0.4.0/configure.ac.orig	2007-08-11 21:39:54.642514000 +0200
++++ gphotofs-0.4.0/configure.ac	2007-08-11 21:42:06.206012143 +0200
+@@ -41,7 +41,7 @@
+ 
+ GP_CHECK_LIBRARY([LIBGPHOTO2], [libgphoto2], [>= 2.3.0])
+ 
+-ALL_LINGUAS=""
++ALL_LINGUAS="pl"
+ GETTEXT_PACKAGE="gphotofs"
+ AC_SUBST(GETTEXT_PACKAGE)
+ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE",
+@@ -51,6 +51,7 @@
+ AC_CONFIG_FILES([
+ Makefile
+ m4m/Makefile
++po/Makefile.in
+ ])
+ AC_OUTPUT
+ GP_CONFIG_OUTPUT
+--- gphotofs-0.4.0/Makefile.am.orig	2007-07-27 15:33:27.000000000 +0200
++++ gphotofs-0.4.0/Makefile.am	2007-08-11 21:58:42.450784897 +0200
+@@ -1,6 +1,6 @@
+ ## Process this file with automake to produce Makefile.in
+ 
+-SUBDIRS = m4m
++SUBDIRS = m4m po
+ 
+ ACLOCAL_AMFLAGS = -I m4m
+ 
+--- gphotofs-0.4.0/gphotofs.c.orig	2007-07-27 15:33:27.000000000 +0200
++++ gphotofs-0.4.0/gphotofs.c	2007-08-11 22:37:26.891247210 +0200
+@@ -753,7 +753,7 @@
+                    _("The port you specified ('%s') can not "
+                      "be found. Please specify one of the ports "
+                      "found by 'gphoto2 --list-ports' make sure "
+-                     "the speilling is correct (i.e. with prefix "
++                     "the spelling is correct (i.e. with prefix "
+                      "'serial:' or 'usb:')."), sPort);
+          g_fprintf(stderr, "\n");
+          goto error;
+@@ -868,6 +868,10 @@
+    GError *error = NULL;
+ 
+    GOptionContext *context = g_option_context_new(_("- gphoto filesystem"));
++   setlocale(LC_ALL, "");
++   /*bindtextdomain(GETTEXT_PACKAGE, LOCALEDIR);*/
++   bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
++   textdomain(GETTEXT_PACKAGE);
+    g_option_context_add_main_entries(context, options, GETTEXT_PACKAGE);
+    g_option_context_set_ignore_unknown_options(context, TRUE);
+    g_option_context_parse(context, &argc, &argv, &error);
+--- gphotofs-0.4.0/po/POTFILES.in.orig	2007-08-11 21:15:46.916013535 +0200
++++ gphotofs-0.4.0/po/POTFILES.in	2007-08-11 21:05:01.163214180 +0200
+@@ -0,0 +1 @@
++gphotofs.c
+--- gphotofs-0.4.0/po/pl.po.orig	2007-08-11 21:19:08.167482203 +0200
++++ gphotofs-0.4.0/po/pl.po	2007-08-11 21:37:06.520934064 +0200
+@@ -0,0 +1,62 @@
++# Polish translation for gphotofs.
++# This file is distributed under the same license as the gphotofs package.
++# Jakub Bogusz <qboosh@pld-linux.org>, 2007.
++#
++msgid ""
++msgstr ""
++"Project-Id-Version: gphotofs 0.4.0\n"
++"Report-Msgid-Bugs-To: \n"
++"POT-Creation-Date: 2007-08-11 21:08+0200\n"
++"PO-Revision-Date: 2007-08-11 21:10+0200\n"
++"Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
++"Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
++"MIME-Version: 1.0\n"
++"Content-Type: text/plain; charset=UTF-8\n"
++"Content-Transfer-Encoding: 8bit\n"
++
++#: gphotofs.c:697
++msgid "You can only specify speeds for serial ports."
++msgstr "Szybkość można podać tylko dla portów szeregowych."
++
++#: gphotofs.c:714
++#, c-format
++msgid "Model %s was not recognised."
++msgstr "Model %s nie został rozpoznany."
++
++#: gphotofs.c:753
++#, c-format
++msgid ""
++"The port you specified ('%s') can not be found. Please specify one of the "
++"ports found by 'gphoto2 --list-ports' make sure the spelling is correct (i."
++"e. with prefix 'serial:' or 'usb:')."
++msgstr ""
++"Nie znaleziono podanego portu ('%s'). Proszę podać jeden z portów znalezionych przez 'gphoto2 --list-ports', upewnić się, że pisownia jest prawidłowa (tzn. z prefiksem 'serial:' lub 'usb:')."
++
++#: gphotofs.c:793
++#, c-format
++msgid "Error initialising gphotofs: %s"
++msgstr "Błąd podczas inicjalizacji gphotofs: %s"
++
++#: gphotofs.c:857
++msgid "Specify port device"
++msgstr "Określenie urządzenia portu"
++
++#: gphotofs.c:858
++msgid "Specify serial transfer speed"
++msgstr "Określenie szybkości przesyłania szeregowego"
++
++#: gphotofs.c:859
++msgid "Specify camera model"
++msgstr "Określenie modelu aparatu"
++
++#: gphotofs.c:860
++msgid "(expert only) Override USB IDs"
++msgstr "(tylko dla ekspertów) Nadpisanie USB ID"
++
++#: gphotofs.c:861
++msgid "Show FUSE help options"
++msgstr "Pokazanie opcji pomocniczych FUSE"
++
++#: gphotofs.c:870
++msgid "- gphoto filesystem"
++msgstr "- system plików gphoto"
