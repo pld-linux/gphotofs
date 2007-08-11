@@ -1,17 +1,24 @@
 Summary:	GPhotoFS - FUSE module that exposes cameras as filesystems
 Summary(pl.UTF-8):	GPhotoFS - moduł FUSE pokazujący aparaty jako systemy plików
 Name:		gphotofs
-Version:	0.3
+Version:	0.4.0
 Release:	1
 License:	GPL
 Group:		Applications
 Source0:	http://dl.sourceforge.net/gphoto/%{name}-%{version}.tar.bz2
-# Source0-md5:	73b7582888b19d2ed976849a6a02782a
+# Source0-md5:	42b63d839e7cff2a0e6b5413bed0530f
+Patch0:		%{name}-po.patch
 URL:		http://gphoto.sourceforge.net/proj/gphotofs/
+BuildRequires:	autoconf >= 2.59
+BuildRequires:	automake >= 1:1.8
 BuildRequires:	glib2-devel >= 1:2.6
-BuildRequires:	libfuse-devel >= 0:2.2
-BuildRequires:	libgphoto2-devel >= 2.1
+BuildRequires:	libfuse-devel >= 0:2.6
+BuildRequires:	libgphoto2-devel >= 2.3.0
+BuildRequires:	libtool
 BuildRequires:	pkgconfig
+Requires:	glib2 >= 1:2.6
+Requires:	libfuse >= 0:2.6
+Requires:	libgphoto2 >= 2.3.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -42,8 +49,15 @@ zrobione.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
+%{__libtoolize}
+%{__glib_gettextize}
+%{__aclocal} -I m4m
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure
 %{__make}
 
@@ -53,10 +67,12 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/gphotofs
