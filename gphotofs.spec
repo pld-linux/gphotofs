@@ -5,7 +5,7 @@ Version:	0.5
 Release:	1
 License:	GPL
 Group:		Applications
-Source0:	http://dl.sourceforge.net/gphoto/%{name}-%{version}.tar.bz2
+Source0:	http://downloads.sourceforge.net/gphoto/%{name}-%{version}.tar.bz2
 # Source0-md5:	bf88054e726e27b9c699ac4ed594cdf6
 Patch0:		%{name}-po.patch
 URL:		http://gphoto.sourceforge.net/proj/gphotofs/
