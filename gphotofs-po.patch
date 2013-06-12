@@ -29,15 +29,6 @@
  
 --- gphotofs-0.4.0/gphotofs.c.orig	2007-07-27 15:33:27.000000000 +0200
 +++ gphotofs-0.4.0/gphotofs.c	2007-08-11 22:37:26.891247210 +0200
-@@ -753,7 +753,7 @@
-                    _("The port you specified ('%s') can not "
-                      "be found. Please specify one of the ports "
-                      "found by 'gphoto2 --list-ports' make sure "
--                     "the speilling is correct (i.e. with prefix "
-+                     "the spelling is correct (i.e. with prefix "
-                      "'serial:' or 'usb:')."), sPort);
-          g_fprintf(stderr, "\n");
-          goto error;
 @@ -868,6 +868,10 @@
     GError *error = NULL;
  

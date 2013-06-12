@@ -1,12 +1,12 @@
 Summary:	GPhotoFS - FUSE module that exposes cameras as filesystems
 Summary(pl.UTF-8):	GPhotoFS - moduł FUSE pokazujący aparaty jako systemy plików
 Name:		gphotofs
-Version:	0.4.0
+Version:	0.5
 Release:	1
 License:	GPL
 Group:		Applications
 Source0:	http://dl.sourceforge.net/gphoto/%{name}-%{version}.tar.bz2
-# Source0-md5:	42b63d839e7cff2a0e6b5413bed0530f
+# Source0-md5:	bf88054e726e27b9c699ac4ed594cdf6
 Patch0:		%{name}-po.patch
 URL:		http://gphoto.sourceforge.net/proj/gphotofs/
 BuildRequires:	autoconf >= 2.59
