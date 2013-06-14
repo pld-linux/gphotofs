@@ -13,12 +13,12 @@ BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.8
 BuildRequires:	glib2-devel >= 1:2.6
 BuildRequires:	libfuse-devel >= 0:2.6
-BuildRequires:	libgphoto2-devel >= 2.3.0
+BuildRequires:	libgphoto2-devel >= 2.5
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 Requires:	glib2 >= 1:2.6
 Requires:	libfuse >= 0:2.6
-Requires:	libgphoto2 >= 2.3.0
+Requires:	libgphoto2 >= 2.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
